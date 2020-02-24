@@ -1,5 +1,7 @@
+package img;
+
 public class Image {
-    Image(String path) {
+    public Image(String path) {
 
     }
 

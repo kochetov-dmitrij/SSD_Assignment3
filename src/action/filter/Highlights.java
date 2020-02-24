@@ -1,6 +1,10 @@
-public class Warmth extends Filter {
+package action.filter;
 
-    Warmth(float ratio) {
+import img.Image;
+
+public class Highlights extends Filter {
+
+    Highlights(float ratio) {
         this.ratio = ratio;
     }
 

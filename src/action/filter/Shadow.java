@@ -1,5 +1,9 @@
-public class Brightness extends Filter {
-    Brightness(float ratio) {
+package action.filter;
+
+import img.Image;
+
+public class Shadow extends Filter {
+    public Shadow(float ratio) {
         this.ratio = ratio;
     }
 

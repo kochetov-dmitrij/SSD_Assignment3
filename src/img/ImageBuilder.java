@@ -1,14 +1,19 @@
+package img;
+
+import action.Action;
+import exporter.Exporter;
+
 import java.io.File;
 import java.util.LinkedList;
 
 public class ImageBuilder {
     LinkedList<Image> states;
 
-    ImageBuilder(Image sourceImage) {
+    public ImageBuilder(Image sourceImage) {
 
     }
 
-    ImageBuilder apply(Action action) {
+    public ImageBuilder apply(Action action) {
         return null;
     }
 

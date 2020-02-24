@@ -1,6 +1,9 @@
-public class Saturation extends Filter {
+package action.filter;
 
-    Saturation(float ratio) {
+import img.Image;
+
+public class Brightness extends Filter {
+    Brightness(float ratio) {
         this.ratio = ratio;
     }
 

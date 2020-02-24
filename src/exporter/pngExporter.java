@@ -1,6 +1,10 @@
+package exporter;
+
+import exporter.Exporter;
+
 import java.io.File;
 
-public class tiffExporter implements Exporter {
+public class pngExporter implements Exporter {
     @Override
     public File convertAndSave(String path) {
         return null;

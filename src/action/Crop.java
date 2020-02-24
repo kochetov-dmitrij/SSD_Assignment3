@@ -1,3 +1,7 @@
+package action;
+
+import img.Image;
+
 public class Crop implements Action {
     private int x1, y1, x2, y2;
 
