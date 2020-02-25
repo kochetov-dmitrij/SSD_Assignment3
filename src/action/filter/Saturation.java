@@ -4,7 +4,7 @@ import img.Image;
 
 public class Saturation extends Filter {
 
-    public Saturation(float ratio) {
+    public Saturation(double ratio) {
         this.ratio = ratio;
     }
 

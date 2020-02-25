@@ -3,7 +3,7 @@ package action.filter;
 import img.Image;
 
 public class Brightness extends Filter {
-    public Brightness(float ratio) {
+    public Brightness(double ratio) {
         this.ratio = ratio;
     }
 

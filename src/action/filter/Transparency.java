@@ -4,7 +4,7 @@ import img.Image;
 
 public class Transparency extends Filter {
 
-    public Transparency(float ratio) {
+    public Transparency(double ratio) {
         this.ratio = ratio;
     }
 

@@ -3,7 +3,7 @@ package action.filter;
 import img.Image;
 
 public class Shadow extends Filter {
-    public Shadow(float ratio) {
+    public Shadow(double ratio) {
         this.ratio = ratio;
     }
 

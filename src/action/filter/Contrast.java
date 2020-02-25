@@ -3,7 +3,7 @@ package action.filter;
 import img.Image;
 
 public class Contrast extends Filter {
-    public Contrast(float ratio) {
+    public Contrast(double ratio) {
         this.ratio = ratio;
     }
 
