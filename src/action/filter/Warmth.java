@@ -5,7 +5,7 @@ import img.Image;
 
 public class Warmth extends Filter {
 
-    Warmth(float ratio) {
+    public Warmth(float ratio) {
         this.ratio = ratio;
     }
 

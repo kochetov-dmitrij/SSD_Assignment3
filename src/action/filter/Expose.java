@@ -4,7 +4,7 @@ import img.Image;
 
 public class Expose extends Filter {
 
-    Expose(float ratio) {
+    public Expose(float ratio) {
         this.ratio = ratio;
     }
 

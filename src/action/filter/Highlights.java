@@ -4,7 +4,7 @@ import img.Image;
 
 public class Highlights extends Filter {
 
-    Highlights(float ratio) {
+    public Highlights(float ratio) {
         this.ratio = ratio;
     }
 
