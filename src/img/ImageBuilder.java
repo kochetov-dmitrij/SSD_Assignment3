@@ -1,6 +1,7 @@
 package img;
 
 import action.Action;
+import cloud.CloudSync;
 import exporter.Exporter;
 
 import java.io.File;
@@ -19,6 +20,9 @@ public class ImageBuilder {
     }
 
     public ImageBuilder apply(Action action) {
+        // Add to the queue to send
+        CloudSync.getCloudSync().addToQueue(action);
+        // Process locally
         Image newState = action.doAction(this.states.get(currentStateIdx));
         // Remove all of the next states since they are not valid anymore
         if (currentStateIdx != this.states.size() - 1){
