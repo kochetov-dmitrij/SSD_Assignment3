@@ -10,7 +10,7 @@ public class CloudSync {
     private Timer timer;
     private final int sendPeriod = 5;
 
-    static private CloudSync cloud = null;
+    static private volatile CloudSync cloud = null;
 
     static public synchronized CloudSync getCloudSync(){
         if (CloudSync.cloud == null){
