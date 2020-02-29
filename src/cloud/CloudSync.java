@@ -23,15 +23,29 @@ public class CloudSync {
         this.queue.add(action);
     }
 
-    private synchronized void send(Action action){
+    /**
+     * Send action to the server.
+     * Returns true if it is successful and false otherwise
+     * @param action
+     * @return
+     */
+    private synchronized boolean send(Action action){
         // TODO : Stub
         System.out.println("Send " + action.toString());
+        return true;
     }
 
-    public synchronized void sendCurrentQueue(){
+    public synchronized boolean sendCurrentQueue(){
         while (!queue.isEmpty()){
-            this.send(queue.remove());
+            Action actionToSend = this.queue.peek();
+            if (send(actionToSend)) {
+                queue.remove();
+            } else {
+                // It is better to try next time
+                return false;
+            }
         }
+        return true;
     }
 
     private void initializeConnection(){
