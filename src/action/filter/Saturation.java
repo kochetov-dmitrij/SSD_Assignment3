@@ -1,6 +1,10 @@
+package action.filter;
+
+import img.Image;
+
 public class Saturation extends Filter {
 
-    Saturation(float ratio) {
+    public Saturation(double ratio) {
         this.ratio = ratio;
     }
 

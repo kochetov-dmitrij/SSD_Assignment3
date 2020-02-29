@@ -1,5 +1,9 @@
-public class Shadow extends Filter {
-    Shadow(float ratio) {
+package action.filter;
+
+import img.Image;
+
+public class Contrast extends Filter {
+    public Contrast(double ratio) {
         this.ratio = ratio;
     }
 

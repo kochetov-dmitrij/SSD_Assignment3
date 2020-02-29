@@ -1,6 +1,9 @@
-public class Expose extends Filter {
+package action.filter;
 
-    Expose(float ratio) {
+import img.Image;
+
+public class Shadow extends Filter {
+    public Shadow(double ratio) {
         this.ratio = ratio;
     }
 

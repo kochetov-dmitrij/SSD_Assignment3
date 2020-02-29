@@ -1,7 +1,11 @@
+package action;
+
+import img.Image;
+
 public class Rotate implements Action {
     private float angle;
 
-    Rotate(float angle) {
+    public Rotate(float angle) {
         this.angle = angle;
     }
 

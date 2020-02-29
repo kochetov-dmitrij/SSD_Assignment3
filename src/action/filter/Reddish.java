@@ -1,5 +1,9 @@
-public class Contrast extends Filter {
-    Contrast(float ratio) {
+package action.filter;
+
+import img.Image;
+
+public class Reddish extends Filter {
+    public Reddish(double ratio) {
         this.ratio = ratio;
     }
 
