@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Image {
     private Pixel[][] matrix;
     private int width;
+
     private int height;
 
     public Image(String path) {
@@ -23,8 +24,16 @@ public class Image {
         return this.height;
     }
 
-    public int getWeight() {
+    public int getWidth() {
         return this.width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public Pixel getPixel(int x, int y) {

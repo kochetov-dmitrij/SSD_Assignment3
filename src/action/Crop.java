@@ -14,6 +14,6 @@ public class Crop implements Action {
 
     @Override
     public Image doAction(Image image) {
-        return null;
+        return image;
     }
 }

@@ -11,6 +11,6 @@ public class Warmth extends Filter {
 
     @Override
     public Image doAction(Image image) {
-        return null;
+        return image;
     }
 }

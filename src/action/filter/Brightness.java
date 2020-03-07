@@ -9,6 +9,6 @@ public class Brightness extends Filter {
 
     @Override
     public Image doAction(Image image) {
-        return null;
+        return image;
     }
 }

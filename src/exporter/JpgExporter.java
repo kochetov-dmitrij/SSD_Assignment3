@@ -5,7 +5,7 @@ import img.Image;
 
 import java.io.File;
 
-public class tiffExporter implements Exporter {
+public class JpgExporter implements Exporter {
     @Override
     public File convertAndSave(String path, Image image) {
         return null;

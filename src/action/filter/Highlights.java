@@ -10,6 +10,6 @@ public class Highlights extends Filter {
 
     @Override
     public Image doAction(Image image) {
-        return null;
+        return image;
     }
 }

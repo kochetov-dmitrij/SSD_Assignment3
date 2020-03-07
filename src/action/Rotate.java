@@ -11,6 +11,6 @@ public class Rotate implements Action {
 
     @Override
     public Image doAction(Image image) {
-        return null;
+        return image;
     }
 }

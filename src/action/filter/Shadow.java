@@ -9,6 +9,6 @@ public class Shadow extends Filter {
 
     @Override
     public Image doAction(Image image) {
-        return null;
+        return image;
     }
 }
