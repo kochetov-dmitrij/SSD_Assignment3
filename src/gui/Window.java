@@ -1,7 +1,5 @@
 package gui;
 
-import javax.swing.text.View;
-
 public class Window {
     BaseView view;
 
@@ -48,7 +46,7 @@ public class Window {
         removeDecorator("HistoryView");
     }
 
-    public void AddFiltersPanel(){
+    public void addFiltersPanel(){
         this.view = new FilterView(this.view);
     }
 

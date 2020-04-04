@@ -1,13 +1,11 @@
 package img;
 
 import action.Action;
-import action.Crop;
 import cloud.CloudSync;
 import exporter.Exporter;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class ImageBuilder {
@@ -24,7 +22,7 @@ public class ImageBuilder {
         // Add to the queue to send
         CloudSync.getCloudSync().addToQueue(action);
         // Process locally
-        ImageState newState = new ImageState(action.doAction(this.states.get(currentStateIdx)), action);
+        ImageState newState = new ImageState(action.doAction(this.states.get(currentStateIdx).img), action);
         // Remove all of the next states since they are not valid anymore
         if (currentStateIdx != this.states.size() - 1){
             for (int idx = this.states.size() - 1; idx > currentStateIdx ; idx-- ){

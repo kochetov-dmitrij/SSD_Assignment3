@@ -13,12 +13,13 @@ public class ViewDecorator extends BaseView {
     @Override
     public void display() {
         System.out.print("{ ");
-        super.display();
+        this.originalView.display();
         displayWrapper();
         System.out.print(" } ");
     }
 
     public ViewDecorator(BaseView originalView) {
+        super(originalView.img);
         this.originalView = originalView;
     }
 }
