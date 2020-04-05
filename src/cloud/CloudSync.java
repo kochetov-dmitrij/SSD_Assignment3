@@ -65,7 +65,7 @@ public class CloudSync {
         timer.schedule(task, delay);
     }
 
-    public CloudSync(){
+    private CloudSync(){
         this.queue = new ConcurrentLinkedQueue<>();
         initializeConnection();
         startTimer();

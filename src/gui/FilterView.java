@@ -1,5 +1,8 @@
 package gui;
 
+/**
+ * Provides panel with available filters
+ */
 public class FilterView extends ViewDecorator {
     @Override
     public void displayWrapper() {

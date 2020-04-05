@@ -1,5 +1,8 @@
 package gui;
 
+/**
+ * Base class for all decorators of BaseView
+ */
 public class ViewDecorator extends BaseView {
 
     protected BaseView originalView;

@@ -1,5 +1,8 @@
 package gui;
 
+/**
+ * Window class containing the view to be displayed and provides basic operations on it
+ */
 public class Window {
     BaseView view;
 
@@ -9,7 +12,7 @@ public class Window {
         // More magic
     }
 
-    public void removeDecorator(String decoratorType){
+    private void removeDecorator(String decoratorType){
         BaseView prevView = null;
         BaseView currView = view;
         while (currView instanceof ViewDecorator){
