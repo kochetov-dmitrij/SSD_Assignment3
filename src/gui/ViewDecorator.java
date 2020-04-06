@@ -1,13 +1,15 @@
 package gui;
 
+import img.ImageBuilder;
+
 /**
  * Base class for all decorators of BaseView
  */
-public class ViewDecorator extends BaseView {
+public class ViewDecorator implements View {
 
-    protected BaseView originalView;
+    protected View originalView;
 
-    protected BaseView getOriginalView() {
+    protected View getOriginalView() {
         return originalView;
     }
 
@@ -21,8 +23,12 @@ public class ViewDecorator extends BaseView {
         System.out.print(" } ");
     }
 
-    public ViewDecorator(BaseView originalView) {
-        super(originalView.img);
+    @Override
+    public ImageBuilder getImageBuilder() {
+        return this.originalView.getImageBuilder();
+    }
+
+    public ViewDecorator(View originalView) {
         this.originalView = originalView;
     }
 }

@@ -9,7 +9,7 @@ public class FilterView extends ViewDecorator {
         System.out.println(" available filters ");
     }
 
-    public FilterView(BaseView originalView) {
+    public FilterView(View originalView) {
         super(originalView);
     }
 }

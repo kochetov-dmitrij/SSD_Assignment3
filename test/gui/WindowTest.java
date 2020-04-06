@@ -15,7 +15,7 @@ class WindowTest {
         // perform all actions and export
         im_builder.apply(new Rotate(45)).apply(new Crop(20, 20, 30, 30)).apply(new Brightness(1.5));
 
-        Window MaceWindow = new Window(new BaseView(im_builder));
+        Window MaceWindow = new Window(new ImageView(im_builder));
 
         MaceWindow.displayContent();
         System.out.println();
@@ -39,7 +39,7 @@ class WindowTest {
         // perform all actions and export
         im_builder.apply(new Rotate(45)).apply(new Crop(20, 20, 30, 30)).apply(new Brightness(1.5));
 
-        Window MaceWindow = new Window(new BaseView(im_builder));
+        Window MaceWindow = new Window(new ImageView(im_builder));
 
         MaceWindow.addHistoryPanel();
 

@@ -4,7 +4,7 @@ package gui;
  * Window class containing the view to be displayed and provides basic operations on it
  */
 public class Window {
-    BaseView view;
+    View view;
 
     public void displayContent(){
         // Some magic
@@ -13,8 +13,8 @@ public class Window {
     }
 
     private void removeDecorator(String decoratorType){
-        BaseView prevView = null;
-        BaseView currView = view;
+        View prevView = null;
+        View currView = view;
         while (currView instanceof ViewDecorator){
             switch (decoratorType){
                 case "FilterView":
@@ -57,7 +57,7 @@ public class Window {
         this.view = new HistoryView(this.view);
     }
 
-    public Window(BaseView view) {
+    public Window(View view) {
         this.view = view;
     }
 }

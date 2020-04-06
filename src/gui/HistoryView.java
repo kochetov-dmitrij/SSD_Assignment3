@@ -11,11 +11,11 @@ public class HistoryView extends ViewDecorator {
 
     @Override
     public void displayWrapper() {
-        ArrayList<ImageState> history = this.getOriginalView().img.getHistory();
+        ArrayList<ImageState> history = this.getOriginalView().getImageBuilder().getHistory();
         System.out.print(history.toString());
     }
 
-    public HistoryView(BaseView originalView) {
+    public HistoryView(View originalView) {
         super(originalView);
     }
 }
