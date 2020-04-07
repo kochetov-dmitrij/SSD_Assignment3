@@ -5,7 +5,7 @@ import img.ImageBuilder;
 /**
  * Base class for all decorators of BaseView
  */
-public class ViewDecorator implements View {
+public abstract class ViewDecorator implements View {
 
     protected View originalView;
 
@@ -13,7 +13,7 @@ public class ViewDecorator implements View {
         return originalView;
     }
 
-    public void displayWrapper(){};
+    public abstract void displayWrapper();
 
     @Override
     public void display() {
