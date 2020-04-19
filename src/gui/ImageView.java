@@ -1,6 +1,6 @@
 package gui;
 
-import img.ImageBuilder;
+import img.ImageBuilderCaretaker;
 
 /**
  * BaseView displays an image itself and provides zoom-in / zoom-out, scroll operations
@@ -9,13 +9,13 @@ public class ImageView implements View {
     public void display(){
         System.out.println("{ " + img.getCurrentImage().toString() + " }");
     }
-    protected ImageBuilder img;
+    protected ImageBuilderCaretaker img;
 
-    public ImageBuilder getImageBuilder() {
+    public ImageBuilderCaretaker getImageBuilderCaretaker() {
         return img;
     }
 
-    public ImageView(ImageBuilder img) {
+    public ImageView(ImageBuilderCaretaker img) {
         this.img = img;
     }
 }
