@@ -1,5 +1,6 @@
 package gui;
 
+import img.ImageBuilder;
 import img.ImageBuilderCaretaker;
 
 /**
@@ -15,7 +16,7 @@ public class ImageView implements View {
         return img;
     }
 
-    public ImageView(ImageBuilderCaretaker img) {
-        this.img = img;
+    public ImageView(ImageBuilder img) {
+        this.img = new ImageBuilderCaretaker(img);
     }
 }
