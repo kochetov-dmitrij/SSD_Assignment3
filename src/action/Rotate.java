@@ -13,4 +13,11 @@ public class Rotate implements Action {
     public Image doAction(Image image) {
         return image;
     }
+
+    @Override
+    public String toString() {
+        return "Rotate{" +
+                "angle=" + angle +
+                '}';
+    }
 }
