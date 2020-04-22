@@ -21,11 +21,12 @@ public class ImageBuilder {
         this.imageState = memento.imageState;
     }
 
-    public void apply(Action action) {
+    public ImageBuilder apply(Action action) {
         // Add to the queue to send
         CloudSync.getCloudSync().addToQueue(action);
         // Process locally
         this.imageState = new ImageState(action.doAction(imageState.img), action);
+        return this;
     }
 
     public File exportTo(Exporter exporter, String path) {

@@ -16,6 +16,8 @@ public class ImageBuilderCaretaker {
 
     public ImageBuilderCaretaker(ImageBuilder imageBuilder) {
         this.imageBuilder = imageBuilder;
+        this.snapshots.add(imageBuilder.save());
+        this.snapshotId = 0;
     }
 
     public void redo() {
@@ -37,6 +39,9 @@ public class ImageBuilderCaretaker {
     }
 
     public ImageBuilderCaretaker apply(Action action) {
+        // Do apply filter
+        this.imageBuilder.apply(action);
+
         // Save the current state
         ImageBuilder.Memento snapshot = this.imageBuilder.save();
 
@@ -49,8 +54,6 @@ public class ImageBuilderCaretaker {
         this.snapshots.add(snapshot);
         this.snapshotId++;
 
-        // Do apply filter
-        this.imageBuilder.apply(action);
         return this;
     }
 
@@ -60,5 +63,9 @@ public class ImageBuilderCaretaker {
 
     public Image getCurrentImage() {
         return this.imageBuilder.getCurrentImage();
+    }
+
+    public ImageState getCurrentImageState() {
+        return this.imageBuilder.save().getImageState();
     }
 }
