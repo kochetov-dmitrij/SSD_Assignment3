@@ -1,11 +1,11 @@
 package gui;
 
-import img.ImageBuilder;
+import img.ImageBuilderCaretaker;
 
 /**
  * Interface of a view to be inserted inside Window
  */
 public interface View {
     void display();
-    ImageBuilder getImageBuilder();
+    ImageBuilderCaretaker getImageBuilderCaretaker();
 }

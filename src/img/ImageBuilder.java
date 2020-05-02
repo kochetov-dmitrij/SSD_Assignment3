@@ -5,47 +5,27 @@ import cloud.CloudSync;
 import exporter.Exporter;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ImageBuilder {
-    private List<ImageState> states;
-    private int currentStateIdx;
+    private ImageState imageState;
 
     public ImageBuilder(Image sourceImage) {
-        this.states = new ArrayList<>();
-        this.states.add(new ImageState(sourceImage, null));
-        currentStateIdx = 0;
+        this.imageState = new ImageState(sourceImage, null);
+    }
+
+    public Memento save() {
+        return new Memento(this.imageState);
+    }
+
+    public void restore(Memento memento) {
+        this.imageState = memento.imageState;
     }
 
     public ImageBuilder apply(Action action) {
         // Add to the queue to send
         CloudSync.getCloudSync().addToQueue(action);
         // Process locally
-        ImageState newState = new ImageState(action.doAction(this.states.get(currentStateIdx).img), action);
-        // Remove all of the next states since they are not valid anymore
-        if (currentStateIdx != this.states.size() - 1){
-            for (int idx = this.states.size() - 1; idx > currentStateIdx ; idx-- ){
-                this.states.remove(idx);
-            }
-
-        }
-        this.states.add(newState);
-        this.currentStateIdx++;
-        return this;
-    }
-
-    public ImageBuilder undo() {
-        if (this.states.size() > 0){
-            this.currentStateIdx--;
-        }
-        return this;
-    }
-
-    public ImageBuilder redo() {
-        if (this.currentStateIdx < this.states.size() - 1){
-            this.currentStateIdx++;
-        }
+        this.imageState = new ImageState(action.doAction(imageState.img), action);
         return this;
     }
 
@@ -53,11 +33,19 @@ public class ImageBuilder {
         return exporter.convertAndSave(path, this.getCurrentImage());
     }
 
-    public Image getCurrentImage() {
-        return this.states.get(currentStateIdx).img;
+    Image getCurrentImage() {
+        return this.imageState.img;
     }
 
-    public ArrayList<ImageState> getHistory() {
-        return new ArrayList<>(this.states);
+    public class Memento {
+        private ImageState imageState;
+
+        Memento(ImageState imageState) {
+            this.imageState = imageState;
+        }
+
+        public ImageState getImageState() {
+            return this.imageState;
+        }
     }
 }

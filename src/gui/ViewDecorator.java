@@ -1,6 +1,6 @@
 package gui;
 
-import img.ImageBuilder;
+import img.ImageBuilderCaretaker;
 
 /**
  * Base class for all decorators of BaseView
@@ -24,11 +24,11 @@ public abstract class ViewDecorator implements View {
     }
 
     @Override
-    public ImageBuilder getImageBuilder() {
-        return this.originalView.getImageBuilder();
+    public ImageBuilderCaretaker getImageBuilderCaretaker() {
+        return this.originalView.getImageBuilderCaretaker();
     }
 
-    public ViewDecorator(View originalView) {
+    ViewDecorator(View originalView) {
         this.originalView = originalView;
     }
 }
